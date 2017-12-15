@@ -1,0 +1,28 @@
+# Xcode
+.DS_Store
+build/
+*.pbxuser
+*.xcworkspace
+xcuserdata
+.xcuserstate
+Pods
+*.xcuserstate
+*.ipa
+
+# Virtualenv
+.Python
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+pyvenv.cfg
+.venv
+pip-selfcheck.json
+*.pyc
+
+# Others
+.env
+images*
+tags
+

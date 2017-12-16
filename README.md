@@ -2,7 +2,7 @@
 
 Classify your beer bottles using Core ML and Keras.
 
-<img width=200 src="https://user-images.githubusercontent.com/1391330/34070717-640ea360-e2ae-11e7-99ec-7f370b6c353d.gif">
+<img width=200 src="https://user-images.githubusercontent.com/1391330/34070759-3e81a024-e2af-11e7-95c8-6f63297d8688.gif">
 
 Note that after I touched `Download New Model` app starts recognizing `Ho*gaarden` as well.
 

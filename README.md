@@ -1,6 +1,7 @@
 # BeerClassifier
 
-Classify your beer bottles using Core ML and Keras.
+Classify your beer bottles using Core ML and Keras.  
+Demo app for this presentation: https://speakerdeck.com/_shingt/core-ml-ios-engineer.
 
 <img width=200 src="https://user-images.githubusercontent.com/1391330/34070759-3e81a024-e2af-11e7-95c8-6f63297d8688.gif">
 

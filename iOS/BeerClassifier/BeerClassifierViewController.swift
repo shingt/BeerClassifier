@@ -196,7 +196,7 @@ extension BeerClassifierViewController: AVCaptureVideoDataOutputSampleBufferDele
     }
 
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        guard let cvImageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+        guard let cvImageBuffer = sampleBuffer.imageBuffer else { return }
         classificationService.classify(cvPixelBuffer: cvImageBuffer)
     }
 }

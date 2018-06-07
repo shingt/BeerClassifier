@@ -1,6 +1,6 @@
 import os
 import math
-import httplib
+import http.client
 import urllib
 import requests
 import json
@@ -14,7 +14,7 @@ from utils import make_dir, is_img
 
 def create_image_path(dir_path, url):
     if not is_img(url):
-        print Fore.RED + "Inappropriate file extension: " + url
+        print(Fore.RED + "Inappropriate file extension: " + url)
         return
     encoded_url = url.encode('utf-8')
     hashed_url = hashlib.sha3_256(encoded_url).hexdigest()
@@ -53,7 +53,7 @@ num_images = 1000
 num_per_transaction = 100
 offset_count = math.floor(num_images / num_per_transaction)
 
-print "--- Generating a url list.."
+print("--- Generating a url list..")
 
 url_list = []
 headers = {
@@ -62,7 +62,7 @@ headers = {
 }
 
 for offset in range(int(offset_count)):
-    params = urllib.urlencode({
+    params = urllib.parse.urlencode({
         'q': query,
         'mkt': 'en-US',
         'count': num_per_transaction,
@@ -70,13 +70,13 @@ for offset in range(int(offset_count)):
     })
 
     try:
-        conn = httplib.HTTPSConnection('api.cognitive.microsoft.com')
+        conn = http.client.HTTPSConnection('api.cognitive.microsoft.com')
         conn.request("GET", "/bing/v7.0/images/search?%s" % params, "{body}", headers)
         response = conn.getresponse()
         data = response.read()
         conn.close()
     except Exception as err:
-        print Fore.RED + "Failed to fetch data from cognitive API."
+        print(Fore.RED + "Failed to fetch data from cognitive API.")
         print("%s" % (err))
     else:
         decode_res = data.decode('utf-8')
@@ -88,13 +88,13 @@ for offset in range(int(offset_count)):
                 if img_url:
                     url_list.append(img_url)
                 else:
-                    print Fore.RED + "Unexpected response: contentUrl not found."
-                    print data
+                    print(Fore.RED + "Unexpected response: contentUrl not found.")
+                    print(data)
         else:
-            print Fore.RED + "Unexpected response"
-            print data
+            print(Fore.RED + "Unexpected response")
+            print(data)
 
-print "--- Fetching images..."
+print("--- Fetching images...")
 
 save_dir_path = os.path.join('./images/crawled/', query)
 make_dir(save_dir_path)
@@ -105,6 +105,6 @@ for url in url_list:
         image = fetch_image(url)
         save_image(img_path, image)
     except Exception as err:
-        print Fore.RED + "Error: " + url
+        print(Fore.RED + "Error: " + url)
         print("%s" % (err))
 

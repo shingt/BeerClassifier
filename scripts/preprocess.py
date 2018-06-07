@@ -17,7 +17,7 @@ def crop_and_resize(img, side):
         resized = cv2.resize(crop_img, resize, interpolation=cv2.INTER_AREA)
         return resized
     except Exception as err:
-        print "Resizing error. image shape:" + str(crop_img.shape)
+        print("Resizing error. image shape:" + str(crop_img.shape))
         raise err
 
 input_dir = "./images/original/"
@@ -33,14 +33,14 @@ for root, _, files in os.walk(input_dir):
         input_img_path = os.path.join(input_dir, sem_file)
         output_img_path = os.path.join(output_dir, sem_file)
         
-        print "Converting " + input_img_path + " => " + output_img_path
+        print("Converting " + input_img_path + " => " + output_img_path)
 
         img = cv2.imread(input_img_path, cv2.IMREAD_COLOR)
         try:
             cropped_img = crop_and_resize(img, size)
         except Exception as err:
-            print err
+            print(err)
             break
    
         if not cv2.imwrite(output_img_path, cropped_img):
-            print "Oops failed to writing image!"
+            print("Oops failed to writing image!")

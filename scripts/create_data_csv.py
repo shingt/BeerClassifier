@@ -16,7 +16,7 @@ test_csv_path = "./texts/test_data2.csv"
 f_train = open(train_csv_path, 'w')
 f_test = open(test_csv_path, 'w')
 
-for (beer, index) in beer_indexs.iteritems():
+for (beer, index) in beer_indexs.items():
     beer_root = os.path.join(source_dir, beer)
     for root, _, files in os.walk(beer_root):
         for file in files:

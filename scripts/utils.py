@@ -2,7 +2,7 @@ import os
 
 def make_dir(path):
     if not os.path.isdir(path):
-        os.mkdir(path)
+        os.makedirs(path)
 
 def is_img(path):
     extensions = {".jpg", "jpeg", ".png", ".bmp"}

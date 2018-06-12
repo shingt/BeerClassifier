@@ -84,7 +84,7 @@ for offset in range(int(offset_count)):
 
         if 'value' in data:
             for values in data['value']:
-                img_url = urllib.unquote(values['contentUrl'])
+                img_url = urllib.parse.unquote(values['contentUrl'])
                 if img_url:
                     url_list.append(img_url)
                 else:

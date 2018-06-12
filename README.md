@@ -11,7 +11,7 @@ Note that after I touched `Download New Model` app starts recognizing `Ho*gaarde
 
 * Swift 4.2
 * Xcode 10.0 beta
-* Python 2.7
+* Python 3.6
 * virtualenv
 * pip
 

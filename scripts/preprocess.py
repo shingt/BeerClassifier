@@ -7,10 +7,10 @@ from utils import make_dir, is_img
 def crop_and_resize(img, side):
     (rows, cols, channels) = img.shape
     if cols > rows:
-        offset = (cols - rows) / 2
+        offset = int((cols - rows) / 2)
         crop_img = img[0:rows, offset:offset + rows]
     else:
-        offset = (rows - cols) / 2
+        offset = int((rows - cols) / 2)
         crop_img = img[offset:offset + cols, 0:cols]
     resize = (side, side)
     try:

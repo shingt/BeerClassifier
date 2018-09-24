@@ -42,6 +42,12 @@ Note that you need to register Azure and set your azure key as `AZURE_KEY` in `.
 python scripts/scraper.py
 ```
 
+### `quantize.py`
+
+```sh
+python scripts/quantize.py -i ./models/BeerClassifier.mlmodel -o ./models/BeerClassifierQuantized.mlmodel
+```
+
 ## Keras-targetted scripts
 
 ### `keras/preprocess.py`

@@ -33,7 +33,7 @@ tensorboard==1.8.0
 tensorflow==1.5.0
 tensorflow-tensorboard==1.5.1
 termcolor==1.1.0
-turicreate==5.0b1
+turicreate==5.0
 urllib3==1.22
 virtualenv==16.0.0
 Werkzeug==0.14.1

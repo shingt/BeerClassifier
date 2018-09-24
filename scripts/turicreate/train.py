@@ -13,6 +13,8 @@ predictions = model.predict(test_data)
 
 # Evaluate the model and save the results into a dictionary
 metrics = model.evaluate(test_data)
+
+print("Done. Accuracy: ")
 print(metrics['accuracy'])
 
 model.save('./models/BeerClassifierTuri.model')

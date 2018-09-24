@@ -26,4 +26,8 @@ pip-selfcheck.json
 images*
 tags
 resources/*
+models/*.model/*
+
+# temp
+models/*Turi.mlmodel
 

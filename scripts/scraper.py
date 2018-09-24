@@ -1,4 +1,5 @@
 import os
+import sys
 import math
 import http.client
 import urllib
@@ -48,7 +49,14 @@ def save_image(filename, image):
 colorama.init(autoreset = True)
 azure_key = settings.AZURE_KEY
 
-query = 'Hoegaarden bottle'
+args = sys.argv
+if len(args) < 2:
+    print("Usage: python scraper.py [query]")
+    sys.exit(1)
+   
+query = args[1]
+print("Input query: " + query)
+
 num_images = 1000
 num_per_transaction = 100
 offset_count = math.floor(num_images / num_per_transaction)
@@ -71,7 +79,12 @@ for offset in range(int(offset_count)):
 
     try:
         conn = http.client.HTTPSConnection('api.cognitive.microsoft.com')
-        conn.request("GET", "/bing/v7.0/images/search?%s" % params, "{body}", headers)
+        conn.request(
+                "GET",
+                "/bing/v7.0/images/search?%s" % params,
+                "{body}",
+                headers
+                )
         response = conn.getresponse()
         data = response.read()
         conn.close()

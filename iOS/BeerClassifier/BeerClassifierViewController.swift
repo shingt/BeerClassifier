@@ -156,7 +156,7 @@ final class BeerClassifierViewController: UIViewController {
         return label
     }()
     private lazy var downloadingIndicatorView: UIActivityIndicatorView = {
-        let indicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        let indicatorView = UIActivityIndicatorView(style: .whiteLarge)
         indicatorView.backgroundColor = textBackgroundColor
         indicatorView.isHidden = true
         return indicatorView
@@ -196,7 +196,9 @@ extension BeerClassifierViewController: AVCaptureVideoDataOutputSampleBufferDele
     }
 
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        guard let cvImageBuffer = sampleBuffer.imageBuffer else { return }
+        guard let cvImageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+        guard !classificationService.processing else { return }
+
         classificationService.classify(cvPixelBuffer: cvImageBuffer)
     }
 }

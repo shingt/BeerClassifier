@@ -12,8 +12,8 @@ enum ClassificationType {
 
 final class ClassificationService {
     var classficationCompletion: (([VNClassificationObservation]) -> ())? = nil
+    var processing = false
 
-    // MARK: - Core ML / Vision
     private var classificationRequest: VNCoreMLRequest? = nil
 
     private lazy var filePathUrl: URL = {
@@ -40,14 +40,17 @@ final class ClassificationService {
     func classify(cvPixelBuffer: CVPixelBuffer) {
         guard let classificationRequest = classificationRequest else { return }
 
+        processing = true
+
         //        let cgImageOrientation = CGImagePropertyOrientation(rawValue: UInt32(image.imageOrientation.rawValue))!
         let cgImageOrientation = CGImagePropertyOrientation(rawValue: 3)!
         let handler = VNImageRequestHandler(cvPixelBuffer: cvPixelBuffer, orientation: cgImageOrientation, options: [:])
-        DispatchQueue.global(qos: .background).async {
+        DispatchQueue.global(qos: .background).async { [weak self] in
             do {
                 try handler.perform([classificationRequest])
             } catch let error {
                 print(error)
+                self?.processing = false
             }
         }
     }
@@ -89,7 +92,8 @@ final class ClassificationService {
     }
 
     private func loadLocal() -> MLModel {
-        let model = BeerClassifier()
+//        let model = BeerClassifier()
+        let model = BeerClassifierTuri()
         return model.model
     }
 
@@ -104,6 +108,7 @@ final class ClassificationService {
             }
 
             self?.classficationCompletion?(classifications)
+            self?.processing = false
         })
 
         request.imageCropAndScaleOption = .centerCrop

@@ -10,7 +10,6 @@ import sha3
 import colorama
 from colorama import Fore
 
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 import settings
 from utils import make_dir, is_img
 

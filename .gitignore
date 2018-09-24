@@ -25,4 +25,5 @@ pip-selfcheck.json
 .env
 images*
 tags
+resources/*
 

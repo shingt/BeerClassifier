@@ -72,3 +72,25 @@ Convert keras model file to `.mlmodel` format.
 python scripts/general/convert_to_mlmodel.py
 ```
 
+---
+
+## Using turicreate
+
+### `convert_image_format.py`
+
+```sh
+python scripts/turicreate/convert_image_format.py
+```
+
+### `create_sframe.py`
+
+```sh
+python scripts/turicreate/create_sframe.py
+```
+
+### `train.py`
+
+```sh
+python scripts/turicreate/train.py
+```
+

@@ -92,7 +92,8 @@ final class ClassificationService {
     }
 
     private func loadLocal() -> MLModel {
-        let model = BeerClassifier()
+//        let model = BeerClassifier()
+        let model = BeerClassifierTuri()
         return model.model
     }
 

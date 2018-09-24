@@ -1,10 +1,12 @@
 import os
 import random
+import sys
 
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from utils import make_dir, is_img
 
 source_dir = "./images/preprocessed/"
-beer_indexs = {
+beer_indexes = {
         "Budweiser": 0,
         "Corona": 1,
         "Heineken": 2,
@@ -16,7 +18,7 @@ test_csv_path = "./texts/test_data2.csv"
 f_train = open(train_csv_path, 'w')
 f_test = open(test_csv_path, 'w')
 
-for (beer, index) in beer_indexs.items():
+for (beer, index) in beer_indexes.items():
     beer_root = os.path.join(source_dir, beer)
     for root, _, files in os.walk(beer_root):
         for file in files:

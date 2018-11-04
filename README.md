@@ -18,7 +18,7 @@ Note that after I tap `Download New Model`, app starts recognizing `Ho*gaarden` 
 ## Setup
 
 ```sh
-virtualenv --system-site-packages ./
+virtualenv -p python3 ./
 source ./bin/activate
 pip install -r requirements.txt
 ```
@@ -35,7 +35,7 @@ source ./bin/activate
 
 ### `scraper.py`
 
-Download images using Microsoft Cognitive API.
+Downloads images using Microsoft Cognitive API.
 Note that you need to register Azure and set your azure key as `AZURE_KEY` in `.env`.
 
 ```sh
@@ -52,7 +52,7 @@ python scripts/quantize.py -i ./models/BeerClassifier.mlmodel -o ./models/BeerCl
 
 ### `keras/preprocess.py`
 
-Crop and resize all images.
+Crops and resize all images.
 
 ```sh
 python scripts/keras/preprocess.py
@@ -60,7 +60,7 @@ python scripts/keras/preprocess.py
 
 ### `keras/create_data_csv.py`
 
-Create `train_data.csv` and `test_data.csv`.
+Creates `train_data.csv` and `test_data.csv`.
 
 ```sh
 python scripts/keras/create_data_csv.py
@@ -68,7 +68,7 @@ python scripts/keras/create_data_csv.py
 
 ### `keras/train.py`
 
-Train using collected images and create model file.
+Trains using collected images and create model file.
 
 ```sh
 python scripts/keras/train.py
@@ -76,7 +76,7 @@ python scripts/keras/train.py
 
 ### `keras/hdf5_to_mlmodel.py`
 
-Convert keras model (in HDF5) file to `.mlmodel` format.
+Converts keras model (in HDF5) file to `.mlmodel` format.
 
 ```sh
 python scripts/keras/hdf5_to_mlmodel.py

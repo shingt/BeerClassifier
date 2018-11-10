@@ -24,8 +24,6 @@ for root, _, files in os.walk(input_dir):
         make_dir(os.path.dirname(output_img_path))
         img = cv2.imread(input_img_path, cv2.IMREAD_COLOR)
 
-#        output_img_path
-
         if not cv2.imwrite(output_img_path, img, cv2.IMWRITE_JPEG_QUALITY):
             print("Oops failed to writing image!")
 

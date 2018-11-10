@@ -68,7 +68,7 @@ python scripts/keras/create_data_csv.py
 
 ### `keras/train.py`
 
-Trains using collected images and create model file.
+Trains using collected images to create model file.
 
 ```sh
 python scripts/keras/train.py
@@ -86,17 +86,23 @@ python scripts/keras/hdf5_to_mlmodel.py
 
 ### `turicreate/convert_image_format.py`
 
+Convert images to turicreate-supporting formats.
+
 ```sh
 python scripts/turicreate/convert_image_format.py
 ```
 
 ### `turicreate/create_sframe.py`
 
+Create an sframe file from prepared images.
+
 ```sh
 python scripts/turicreate/create_sframe.py
 ```
 
 ### `turicreate/train.py`
+
+Trains using prepared images and and sframe file to create model file.
 
 ```sh
 python scripts/turicreate/train.py

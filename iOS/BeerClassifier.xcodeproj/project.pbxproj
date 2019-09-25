@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		123BA1191FDD08880044B06D /* BeerClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 123BA1181FDD08880044B06D /* BeerClassifier.mlmodel */; };
-		126C83B02158FB64000A755E /* BeerClassifierTuri.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 126C83AF2158FB64000A755E /* BeerClassifierTuri.mlmodel */; };
 		128169A91FCA5B570051F8D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128169A81FCA5B570051F8D6 /* AppDelegate.swift */; };
 		128169AB1FCA5B570051F8D6 /* BeerClassifierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128169AA1FCA5B570051F8D6 /* BeerClassifierViewController.swift */; };
 		128169AE1FCA5B570051F8D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 128169AC1FCA5B570051F8D6 /* Main.storyboard */; };
@@ -16,6 +15,7 @@
 		128169B31FCA5B570051F8D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 128169B11FCA5B570051F8D6 /* LaunchScreen.storyboard */; };
 		128169BE1FCA5B570051F8D6 /* BeerClassifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128169BD1FCA5B570051F8D6 /* BeerClassifierTests.swift */; };
 		128169C91FCA5BAD0051F8D6 /* ClassificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128169C81FCA5BAD0051F8D6 /* ClassificationService.swift */; };
+		12C9CEC7233BCFC400F4EE62 /* TempModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 12C9CEC6233BCFC400F4EE62 /* TempModel.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +30,6 @@
 
 /* Begin PBXFileReference section */
 		123BA1181FDD08880044B06D /* BeerClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = BeerClassifier.mlmodel; path = ../../models/BeerClassifier.mlmodel; sourceTree = "<group>"; };
-		126C83AF2158FB64000A755E /* BeerClassifierTuri.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = BeerClassifierTuri.mlmodel; path = ../../models/BeerClassifierTuri.mlmodel; sourceTree = "<group>"; };
 		128169A51FCA5B570051F8D6 /* BeerClassifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerClassifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		128169A81FCA5B570051F8D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		128169AA1FCA5B570051F8D6 /* BeerClassifierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerClassifierViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +41,7 @@
 		128169BD1FCA5B570051F8D6 /* BeerClassifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerClassifierTests.swift; sourceTree = "<group>"; };
 		128169BF1FCA5B570051F8D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		128169C81FCA5BAD0051F8D6 /* ClassificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationService.swift; sourceTree = "<group>"; };
+		12C9CEC6233BCFC400F4EE62 /* TempModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TempModel.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 				128169C81FCA5BAD0051F8D6 /* ClassificationService.swift */,
 				128169AC1FCA5B570051F8D6 /* Main.storyboard */,
 				123BA1181FDD08880044B06D /* BeerClassifier.mlmodel */,
-				126C83AF2158FB64000A755E /* BeerClassifierTuri.mlmodel */,
+				12C9CEC6233BCFC400F4EE62 /* TempModel.mlmodel */,
 				128169AF1FCA5B570051F8D6 /* Assets.xcassets */,
 				128169B11FCA5B570051F8D6 /* LaunchScreen.storyboard */,
 				128169B41FCA5B570051F8D6 /* Info.plist */,
@@ -210,7 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				126C83B02158FB64000A755E /* BeerClassifierTuri.mlmodel in Sources */,
+				12C9CEC7233BCFC400F4EE62 /* TempModel.mlmodel in Sources */,
 				123BA1191FDD08880044B06D /* BeerClassifier.mlmodel in Sources */,
 				128169AB1FCA5B570051F8D6 /* BeerClassifierViewController.swift in Sources */,
 				128169C91FCA5BAD0051F8D6 /* ClassificationService.swift in Sources */,

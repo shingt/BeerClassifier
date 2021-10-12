@@ -18,7 +18,7 @@ Keras-Preprocessing==1.0.5
 Markdown==2.6.11
 mxnet==1.1.0.post0
 numpy==1.14.4
-opencv-python==3.4.1.15
+opencv-python==3.4.7.28
 pandas==0.23.0
 Pillow==5.1.0
 prettytable==0.7.2

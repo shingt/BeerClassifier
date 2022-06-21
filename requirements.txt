@@ -17,7 +17,7 @@ Keras-Applications==1.0.6
 Keras-Preprocessing==1.0.5
 Markdown==2.6.11
 mxnet==1.1.0.post0
-numpy==1.14.4
+numpy==1.22.0
 opencv-python==3.4.1.15
 pandas==0.23.0
 Pillow==5.1.0

@@ -9,8 +9,7 @@ Note that after I tap `Download New Model`, app starts recognizing `Ho*gaarden` 
 
 ## Requirements
 
-* Swift 4.2
-* Xcode 10.0
+* Xcode 12.5.1
 * Python 3.6
 * virtualenv
 * pip

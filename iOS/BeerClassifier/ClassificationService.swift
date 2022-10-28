@@ -58,15 +58,20 @@ final class ClassificationService {
     // MARK: - Private
 
     private func setupClassification() throws {
-        let model = loadLocal()
+        let model = try loadLocal()
         try updateClassificationRequest(model: model)
     }
 
     private func loadModel(classificationType: ClassificationType, completion: ((MLModel) -> ())? = nil) throws {
         switch classificationType {
         case .beer3:
-            let model = loadLocal()
-            completion?(model)
+            do {
+                let model = try loadLocal()
+                completion?(model)
+            } catch let error {
+                print("Failed to load model. Error: \(error)")
+                assertionFailure()
+            }
         case .beer4:
             DispatchQueue.global(qos: .userInitiated).async {
                 // For this sample app model isn't reused on purpose,
@@ -91,9 +96,10 @@ final class ClassificationService {
         try data.write(to: filePathUrl)
     }
 
-    private func loadLocal() -> MLModel {
-//        let model = BeerClassifier()
-        let model = BeerClassifierTuri()
+    private func loadLocal() throws -> MLModel {
+        let configuration = MLModelConfiguration()
+        let model = try BeerClassifier(configuration: configuration)
+//        let model = BeerClassifierTuri()
         return model.model
     }
 
